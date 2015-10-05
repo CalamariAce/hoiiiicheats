@@ -1,14 +1,3 @@
-hoiiiicheats
-============
-
-Cheats for Hearts of Iron III: Their Finest Hour
-
-**May result in game save file corruption.  Use at your own risk.  You should make backup copies of any important save files before running these scripts on them.**
-
-Usage examples:
-
-<pre><code>
-
 #!/usr/bin/env bash
 
 if [ -z "$1" ] || [ -z "$2" ]; then
@@ -52,7 +41,6 @@ fi
 /usr/bin/time -f '%e' ./strength.py "$1" $2 #put all units to full strength for this nation
 /usr/bin/time -f '%e' ./unit_experience.py "$1" $2 1.5 #multiply all unit experience by this amount for this nation
 /usr/bin/time -f '%e' ./leader_experience.py "$1" $2 1.5 #multiply all leader experience by this amount for this nation
-
 #tech.py usage:
 #./tech.py file_name nation ttype tech_increase_value upgrade_only_existing_tech do_techtreeonly
 #where ttype can be one of the following: air, armor, sea, landing_craft, infantry, industry, secret, all, and all_techs_under_research
@@ -66,10 +54,3 @@ fi
 
 # Example #3 - increasing by 1 all techs for which we have at least 1 point researched into
 #/usr/bin/time -f '%e' ./tech.py "$1" $2 all 1 all_owned_techs True
-
-#alignment.py usage:
-/usr/bin/time -f '%e' ./alignment.py "$1" $2 comintern #set alignment for this nation to `comintern` faction so that you can try to invite this nation to your faction.  Other acceptable values are `allies` and `axis`.  Substitute the keyword `all` for the nation string to change alignment of all nations.
-
-#threat.py usage:
-/usr/bin/time -f '%e' ./threat.py "$1" $2 ENG 999.999 #set threat level of england to 999.999 for this nation.  Substitute the keyword `all` for the (first) nation string to set the threat level of england for all nations at once.  Useful in combination with alignment.py to be able to invite nations to your faction.
-</code></pre>
