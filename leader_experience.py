@@ -12,7 +12,7 @@ if len(sys.argv) > 2:
 else:
   nation='SOV'
 if len(sys.argv) > 3:
-  multiplier=sys.argv[3]
+  multiplier=float(sys.argv[3])
 else:
   multiplier=3
 text_file = open(input_file, "r")
