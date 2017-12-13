@@ -35,8 +35,11 @@ for idx, line in enumerate(text_file):
     if match_nation_flag:
       if re.search('current_producing=',line):
         entered_subelement=True
+        count = 0
       if entered_subelement:
         if re.search( '\W}', line):
+          count += 1
+        if count >= 2:
           entered_subelement=False
         metal_match = re.search('metal=',line)
         if metal_match:

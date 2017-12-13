@@ -26,7 +26,7 @@ for idx, line in enumerate(text_file):
   if not reached_end_of_provinces:
     if re.match('[0-9]*=',line):
       match_nation_flag=False
-    if re.search('controller="' + nation + '"',line):
+    if re.search('controller="' + nation + '"',line) or re.search('owner="' + nation + '"',line):
       match_nation_flag=True
     if match_nation_flag:
       revolt_risk_match = re.search('revolt_risk=',line)

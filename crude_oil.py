@@ -33,12 +33,17 @@ for idx, line in enumerate(text_file):
     if re.search('controller="' + nation + '"',line):
       match_nation_flag=True
     if match_nation_flag:
-#      if re.search('current_producing=',line):
-#        entered_subelement=True
-#      if entered_subelement:
-      crude_oil_match = re.search('crude_oil=',line)
-      if crude_oil_match:
-        line='crude_oil=' + str(float(line[crude_oil_match.end():re.search('[0-9].[0-9]*',line[crude_oil_match.end():]).end()+crude_oil_match.end()]) * multiplier) + '\n'
+      if re.search('current_producing=',line):
+        entered_subelement=True
+        count = 0
+      if entered_subelement:
+        if re.search( '\W}', line):
+          count += 1
+        if count >= 2:
+          entered_subelement=False
+        crude_oil_match = re.search('crude_oil=',line)
+        if crude_oil_match:
+          line='crude_oil=' + str(float(line[crude_oil_match.end():re.search('[0-9].[0-9]*',line[crude_oil_match.end():]).end()+crude_oil_match.end()]) * multiplier) + '\n'
   if not delay_write:
     outFile.write(line)
 text_file.close()
