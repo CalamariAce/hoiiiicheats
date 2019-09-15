@@ -6,14 +6,17 @@ import sys
 if len(sys.argv) > 1:
   input_file=sys.argv[1]
 else:
-  input_file='soviet_losing_japan_ally.hoi3'
+  print "Error: No .hoi3 save file was provided."
+  sys.exit(2)
 if len(sys.argv) > 2:
   nation=sys.argv[2]
 else:
-  nation='SOV'
+  print 'Error: No capitalized 3-letter nation code was provided.'
+  sys.exit(2)
 if len(sys.argv) > 3:
   amount=str(sys.argv[3])
 else:
+  print "Warn: No amount was provided, so air bases were set to a value of 10/10"
   amount='10.000'
 text_file = open(input_file, "r")
 whole_thing = text_file.read()
@@ -43,5 +46,6 @@ for idx, line in enumerate(text_file):
     outFile.write(line)
 text_file.close()
 outFile.close()
+os.remove(input_file)
 os.rename('outFile.hoi3', input_file)
 print 'Finished making edits for', sys.argv[0]
