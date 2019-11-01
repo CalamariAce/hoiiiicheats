@@ -17,14 +17,17 @@ if len(sys.argv) > 3:
 else:
   faction='comintern'
 if faction == 'comintern':
-  xval = '-200.000'
-  yval = '200.000'
+  xval = '-200'
+  yval = '200'
 elif faction == 'allies':
-  xval = '0.000'
-  yval = '-146.000'
+  xval = '0'
+  yval = '-146'
 elif faction == 'axis':
-  xval = '200.000'
-  yval = '200.000'
+  xval = '200'
+  yval = '200'
+elif faction == 'neutral':
+  xval = '0'
+  yval = '0'
 else:
   print "Do not recognize the faction you specified: " + faction
   print "Faction must be `comintern`, `allies`, or `axis`"
