@@ -1,61 +1,99 @@
 hoiiiicheats
 ============
 
-Cheats for Hearts of Iron III: Their Finest Hour
+Save game edit scripts for Hearts of Iron III: Their Finest Hour (hoi3, Hearts of Iron 3)
 
 **May result in game save file corruption.  Use at your own risk.  You should make backup copies of any important save files before running these scripts on them.**
 
 ## Install/Setup
 
-1. Install Python 2.x for your operating system, e.g.: [Python 2.7.16 Win 64](https://www.python.org/ftp/python/2.7.16/python-2.7.16.amd64.msi) | [Python 2.7.16 Win 32](https://www.python.org/ftp/python/2.7.16/python-2.7.16.msi)
-2. Ensure that python is part of your operating system's path. Google search `windows python path` and follow the featured snippets `Add Python to the Windows Path` and `Is Python in your PATH ?`. It may be necessary to restart your operating system session before you will see any changes take effect.
-3. Download the python scripts provided in this repository [here](https://github.com/CalamariAce/hoiiiicheats/archive/master.zip)
-4. Extract the zip file downloaded in step #3 into the directory where your hoi3 save files are located. The .py files should be in the same directory as the .hoi3 files. If they are not, relocate the .py files to the same directory as the .hoi3 files.
-5. Open a command prompt (Start --> Run --> "cmd" on Windows) and "cd" to the hoi3 save directory.
-6. Run any of the scripts on the desired save file as shown below. If you receive any error to the effect that the "python" binary cannot be found, then python is not in your Path and you should revisit step #2.
+1. Install Python 2.x for your operating system using a package installer or [Download Page](https://www.python.org/downloads/)
+2. Ensure that python is part of your operating system's path. For Windows, that's an option in the installer, but you'll have to reopen your console to see the effect
+3. Download the python scripts provided in this repository [here](https://github.com/CalamariAce/hoiiiicheats/archive/master.zip) and extract
+4. Open a command prompt (Start --> Run --> "cmd" on Windows) and "cd" to the script directory
+5. Run any of the scripts on the desired save file as shown below. If you receive any error to the effect that the "python" binary cannot be found, then python is not in your Path and you should revisit step #2. You'll have to provide the save file names include paths.
 
-## Usage examples
+## Scripts
+Unless otherwise noted, scripts use the following syntax:
 
-<pre><code>
-# General script call format:
-./script.py "HOI3-save-file-name.hoi3" "3-letter-nation-code" "parameter(s)"
+	syntax:  script path/to/save.hoi3 NAT [level]
+	example: script path/to/save.hoi3 SOV 
+	example: script path/to/save.hoi3 GER 10
 
-# Examples for modifying myGame.hoi3 for soviets (SOV)
-./air_base.py myGame.hoi3 "SOV" 10.000 #set all squares that have air base to this value
-./anti_air.py "myGame.hoi3" "SOV" 10.000 #set all squares that have anti-air to this value
-./coastal_fort.py "myGame.hoi3" "SOV" 10.000 #set all squares that haev coastal forts to this value
-./crude_oil.py "myGame.hoi3" "SOV" 3 #crude production multiplier
-./diplo_influence.py "myGame.hoi3" "SOV" 100 #set diplo influence to this amount
-./dissent.py "myGame.hoi3" "SOV" #sets dissent to zero
-./energy_production.py "myGame.hoi3" "SOV" 7 #energy production multiplier
-./faction_battles.py "myGame.hoi3" "SOV" #grants 251 battles for air/naval/ground for veteran status
-./fuel.py "myGame.hoi3" "SOV" 3 #fuel production multiplier
-./industry.py "myGame.hoi3" "SOV" 10.000 #set all squares that have industry to this industry value
-./infra.py "myGame.hoi3" #sets all infra to 10.000
-./infra_faction.py "myGame.hoi3" "SOV" 10.000 #Faction specific infrasturcture change
-./land_fort.py "myGame.hoi3" "SOV" 10.000 #set all squares that have land forts to this value
-./laws.py "myGame.hoi3" "SOV" #sets nation to best laws
-./leadership.py "myGame.hoi3" "SOV" 3 #province leadership bonus multiplier
-./manpower_production.py "myGame.hoi3" "SOV" 5 #manpower production multiplier
-./manpower.py "myGame.hoi3" "SOV" 5 #multipliy current manpower stockpile by this maount
-./metal_production.py "myGame.hoi3" "SOV" 7 #metal production multiplier
-./military_construction.py "myGame.hoi3" "SOV" #completes all queued military constructions for the faction
-./money.py "myGame.hoi3" "SOV" 3 #current money multiplier
-./national_unity.py "myGame.hoi3" "SOV" 99.999 #set national unity to this amount
-./naval_base.py "myGame.hoi3" "SOV" 10.000 #set all squares that have naval bases to this value
-./neutrality.py "myGame.hoi3" "SOV" 0.000 #set neutrality to this value
-./officers.py "myGame.hoi3" "SOV" 5 #current officer multiplier
-./radar_station.py "myGame.hoi3" "SOV" 10.000 #set all squares that have radar station to this value
-./rare_materials_production.py "myGame.hoi3" "SOV" 10 #rare materials production multiplier
-./revolt_risk.py "myGame.hoi3" "SOV" #lowers the revolt risk to 0 for all controlled provinces
-./spies.py "myGame.hoi3" "SOV" 150 #sets the number of free spies
-./supplies.py "myGame.hoi3" "SOV" 3 #multiplies supply production and/or stockpile by this amount
-./theory_practical.py "myGame.hoi3" "SOV" 99.000 #set theory and practical values on the tech screen to this value
-./war_exhaustion.py "myGame.hoi3" "SOV" #sets war exhaustion to 0 for this nation
-./organization.py "myGame.hoi3" "SOV" #make all units fully organized for this nation
-./strength.py "myGame.hoi3" "SOV" #put all units to full strength for this nation
-./unit_experience.py "myGame.hoi3" "SOV" 1.5 #multiply all unit experience by this amount for this nation
-./leader_experience.py "myGame.hoi3" "SOV" 1.5 #multiply all leader experience by this amount for this nation
+### province resource production
+Multiply resource production for all controlled provinces. Level parameter is a multiplier, default is 3.
+	
+| Script | Description |
+| :--- | :--- |
+| crude_oil  |
+| energy_production  |
+| metal_production  |
+| rare_materials_production  |
+
+
+### province improvement levels
+Set improvement levels for all controlled provinces. Default level is 10.
+
+| Script | Description |
+| :--- | :--- |
+| air_base  |
+| anti_air  |
+| coastal_fort  |
+| industry  |
+| infra  |
+| land_fort  |
+| naval_base  |
+| radar_station  |
+
+### other province details
+Multiply other province details. Level parameter is a multiplier, default is 3.
+
+| Script | Description |
+| :--- | :--- |
+| leadership  |
+| manpower_production  |
+| money  |
+| supplies  |
+
+### nation multiply value scripts
+Multiply some value for a nation.
+
+| Script | Description |
+| :--- | :--- |
+| fuel  |
+| leader_experience  |
+| manpower  |
+| officers  |
+| unit_experience  |
+
+
+### nation set value scripts
+Set some value for a nation.
+
+| Script | Description |
+| :--- | :--- |
+| diplo_influence  |
+| dissent  |
+| national_unity  |
+| neutrality  |
+| organization  |
+| spies  |
+| war_exhaustion  |
+
+
+### other
+Other scripts. Syntax is script save.hoi3 unless noted otherwise
+| Script | Description |
+| :--- | :--- |
+| infra_all 	| set all infrastructure in the world to 10. Syntax: script save.hoi3 |
+| revolt_risk | set revolt risk to X. |
+| alignment 	| set nations alignment to comintern, axis, allies, or neutral. Does not join or leave faction. |
+| faction_battles  | grants 251 battles for air/naval/ground for veteran status |
+| laws  | sets nation to best laws |
+| military_construction  | completes all queued military constructions |
+| strength  | put all units to full strength |
+| takeOwnership  | take ownership of controlled provinces: Use: save.hoi3 controller oldOwner |
+| theory_practical  | set theory and practical values on the tech screen |
 
 #tech.py usage:
 #./tech.py file_name nation ttype tech_increase_value upgrade_only_existing_tech do_techtreeonly
