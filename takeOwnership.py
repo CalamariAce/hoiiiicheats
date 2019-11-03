@@ -13,9 +13,9 @@ input_file  = sys.argv[1]
 controller  = sys.argv[2]
 owner       = sys.argv[3]
 
-text = '\towner="$"\n\tcontroller="' + controller + '"'
-oldText = re.sub('$', owner, text)
-newText = re.sub('$', controller, text)
+text = '\towner="#"\n\tcontroller="' + controller + '"'
+oldText = re.sub('#', owner, text)
+newText = re.sub('#', controller, text)
 
 pattern     = re.compile(oldText)
 text_file   = open(input_file, "r")
