@@ -25,10 +25,10 @@ Multiply resource production for all controlled provinces. Level parameter is a 
 	
 | Script | Description |
 | :--- | :--- |
-| crude_oil  |
-| energy_production  |
-| metal_production  |
-| rare_materials_production  |
+| crude_oil  |  |
+| energy_production  |  |
+| metal_production  |  |
+| rare_materials_production  |  |
 
 
 ### province improvement levels
@@ -36,35 +36,36 @@ Set improvement levels for all controlled provinces. Default level is 10.
 
 | Script | Description |
 | :--- | :--- |
-| air_base  |
-| anti_air  |
-| coastal_fort  |
-| industry  |
-| infra  |
-| land_fort  |
-| naval_base  |
-| radar_station  |
+| air_base  |  |
+| anti_air  |  |
+| coastal_fort  |  |
+| industry  |  |
+| infra  |  |
+| land_fort  |  |
+| naval_base  |  |
+| radar_station  |  |
 
 ### other province details
 Multiply other province details. Level parameter is a multiplier, default is 3.
 
 | Script | Description |
 | :--- | :--- |
-| leadership  |
-| manpower_production  |
-| money  |
-| supplies  |
+| leadership  |  |
+| manpower_production  |  |
+| money  |  |
+| nationalism |  |
+| supplies  |  |
 
 ### nation multiply value scripts
 Multiply some value for a nation.
 
 | Script | Description |
 | :--- | :--- |
-| fuel  |
-| leader_experience  |
-| manpower  |
-| officers  |
-| unit_experience  |
+| fuel  |  |
+| leader_experience  |  |
+| manpower  |  |
+| officers  |  |
+| unit_experience  |  |
 
 
 ### nation set value scripts
@@ -72,13 +73,13 @@ Set some value for a nation.
 
 | Script | Description |
 | :--- | :--- |
-| diplo_influence  |
-| dissent  |
-| national_unity  |
-| neutrality  |
-| organization  |
-| spies  |
-| war_exhaustion  |
+| diplo_influence  |  |
+| dissent  |  |
+| national_unity  |  |
+| neutrality  |  |
+| organization  |  |
+| spies  |  |
+| war_exhaustion  |  |
 
 
 ### other
@@ -95,25 +96,25 @@ Other scripts. Syntax is script save.hoi3 unless noted otherwise
 | takeOwnership  | take ownership of controlled provinces: Use: save.hoi3 controller oldOwner |
 | theory_practical  | set theory and practical values on the tech screen |
 
-#tech.py usage:
-#./tech.py file_name nation ttype tech_increase_value upgrade_only_existing_tech do_techtreeonly
-#where ttype can be one of the following: air, armor, sea, landing_craft, infantry, industry, secret, all, and all_techs_under_research
-#and where tech_increase_value is the amount to increase the relevant techs by
-#and where upgrade_only_existing_tech if set to 'all_owned_techs' will only upgrade tech already at a level of 1 or higher.  Default is 'unrestricted'.
-#and where do_techtreeonly if set to True will only change techs in techtree.  If false, it will also applies the same tech updates to existing units, units under construction, and units waiting for deployment (Note - this takes a long time - several orders of magnitude longer than the others).
-./tech.py "myGame.hoi3" "SOV" all 2 unrestricted True
+### tech.py usage:
+tech.py file_name nation ttype tech_increase_value upgrade_only_existing_tech do_techtreeonly
+where ttype can be one of the following: air, armor, sea, landing_craft, infantry, industry, secret, all, and all_techs_under_research
+and where tech_increase_value is the amount to increase the relevant techs by
+and where upgrade_only_existing_tech if set to 'all_owned_techs' will only upgrade tech already at a level of 1 or higher.  Default s 'unrestricted'.
+and where do_techtreeonly if set to True will only change techs in techtree.  If false, it will also applies the same tech updates to existing units, units under construction, and units waiting for deployment (Note - this takes a long time - several orders of magnitude longer than the others).
+tech.py "myGame.hoi3" "SOV" all 2 unrestricted True
 
-# Example #2 - increasing by 1 all techs currently being researched, and increase current deployed unit researches by the same amount.
-./tech.py "myGame.hoi3" "SOV" all_techs_under_research 1 unrestricted False
+### Example #2 - increasing by 1 all techs currently being researched, and increase current deployed unit researches by the same amount.
+tech.py "myGame.hoi3" "SOV" all_techs_under_research 1 unrestricted False
 
-# Example #3 - increasing by 1 all techs for which we have at least 1 point researched into
-./tech.py "myGame.hoi3" "SOV" all 1 all_owned_techs True
+### Example #3 - increasing by 1 all techs for which we have at least 1 point researched into
+tech.py "myGame.hoi3" "SOV" all 1 all_owned_techs True
 
 #alignment.py usage:
-./alignment.py "myGame.hoi3" "USA" comintern #set alignment for this nation to `comintern` faction so that you can try to invite this nation to your faction.  Other acceptable values are `allies` and `axis`.  Substitute the keyword `all` for the nation string to change alignment of all nations.
+alignment.py "myGame.hoi3" "USA" comintern #set alignment for this nation to `comintern` faction so that you can try to invite this nation to your faction.  Other acceptable values are `allies` and `axis`.  Substitute the keyword `all` for the nation string to change alignment of all nations.
 
 #threat.py usage:
-./threat.py "myGame.hoi3" "USA" ENG 999.999 #set threat level of england to 999.999 for this nation.  Substitute the keyword `all` for the (first) nation string to set the threat level of england for all nations at once.  Useful in combination with alignment.py to be able to invite nations to your faction.
+threat.py "myGame.hoi3" "USA" ENG 999.999 #set threat level of england to 999.999 for this nation.  Substitute the keyword `all` for the (first) nation string to set the threat level of england for all nations at once.  Useful in combination with alignment.py to be able to invite nations to your faction.
 </code></pre>
 
 ## Where do I find country codes?
