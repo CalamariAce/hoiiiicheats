@@ -44,6 +44,8 @@ Default level is 10.
 | land_fort  |  |
 | naval_base  |  |
 | radar_station  |  |
+| rocket_test  |  |
+| nuclear_reactor  |  |
 
 ### other province details: Multiply other province details.
 Level parameter is a multiplier, default is 3.

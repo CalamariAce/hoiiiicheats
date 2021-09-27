@@ -41,6 +41,8 @@ fi
 /usr/bin/time -f '%e' ./strength.py "$1" $2 #put all units to full strength for this nation
 /usr/bin/time -f '%e' ./unit_experience.py "$1" $2 1.5 #multiply all unit experience by this amount for this nation
 /usr/bin/time -f '%e' ./leader_experience.py "$1" $2 1.5 #multiply all leader experience by this amount for this nation
+/usr/bin/time -f '%e' ./rocket_test.py "$1" $2 10.000 #set all squares that have rocket test sites to this value
+/usr/bin/time -f '%e' ./nuclear_reactor.py "$1" $2 10.000 #set all squares that have nuclear reactors to this value
 #tech.py usage:
 #./tech.py file_name nation ttype tech_increase_value upgrade_only_existing_tech do_techtreeonly
 #where ttype can be one of the following: air, armor, sea, landing_craft, infantry, industry, secret, all, and all_techs_under_research
